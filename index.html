@@ -27,27 +27,33 @@
         <img src="rail_128.png" alt="Gemini Logo" class="w-10 h-10" />
         <h1 class="text-xl md:text-2xl font-bold text-blue-700">Gemini Ai</h1>
       </div>
-      <button id="menu-toggle" class="md:hidden text-blue-600 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-      <nav id="nav-links" class="hidden md:flex items-center space-x-6 font-medium text-blue-600">
-        <a href="#services" class="hover:text-blue-800 transition duration-300">Services</a>
-        <a href="#tutorial" class="hover:text-blue-800 transition duration-300">Tutorial</a>
-        <a href="#pricing" class="hover:text-blue-800 transition duration-300">Buy Plan</a>
-        <a href="#my-plan" class="hover:text-blue-800 transition duration-300">My Plan</a>
-        <a href="#contact" class="hover:text-blue-800 transition duration-300">Contact</a>
-        <a href="#footer" class="hover:text-blue-800 transition duration-300">More</a>
-      </nav>
+      <div class="flex items-center gap-4">
+        <button id="menu-toggle" class="md:hidden text-blue-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <nav id="nav-links" class="hidden md:flex items-center space-x-6 font-medium text-blue-600">
+          <a href="#services" class="hover:text-blue-800 transition duration-300">Services</a>
+          <a href="#tutorial" class="hover:text-blue-800 transition duration-300">Tutorial</a>
+          <a href="#pricing" class="hover:text-blue-800 transition duration-300">Buy Plan</a>
+          <a href="#my-plan" class="hover:text-blue-800 transition duration-300">My Plan</a>
+          <a href="#admin-panel" class="hover:text-blue-800 transition duration-300">Admin Panel</a>
+          <a href="#contact" class="hover:text-blue-800 transition duration-300">Contact</a>
+          <a href="#footer" class="hover:text-blue-800 transition duration-300">More</a>
+        </nav>
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition duration-300 hidden md:block">Client Login</a>
+      </div>
     </div>
     <div id="mobile-menu" class="md:hidden mt-2 hidden flex-col space-y-2 text-blue-600 font-medium bg-white border-t border-blue-100 py-2">
       <a href="#services" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">Services</a>
       <a href="#tutorial" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">Tutorial</a>
       <a href="#pricing" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">Buy Plan</a>
       <a href="#my-plan" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">My Plan</a>
+        <a href="#admin-panel" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">Admin Panel</a>
       <a href="#contact" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">Contact</a>
       <a href="#footer" class="block px-4 py-2 hover:bg-blue-50 transition duration-200">More</a>
+      <a href="#" class="block px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition duration-300 rounded-b-lg">Client Login</a>
     </div>
   </header>
 
@@ -83,24 +89,30 @@
           }
         </script>
         
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-          <a href="GitHub Latest.crx" download class="inline-flex items-center justify-center bg-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:-translate-y-1 text-lg font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Download Extension
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          <a href="#" class="inline-flex items-center justify-center bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Gemini Ai Extension
           </a>
-          <a href="GitHub-tatkal-activator-letest.reg" download class="inline-flex items-center justify-center bg-purple-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 transform hover:-translate-y-1 text-lg font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12 22a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4"></path><path d="M12 22a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4"></path><path d="M8 10h8"></path><path d="M8 14h8"></path></svg>
+          <a href="#" class="inline-flex items-center justify-center bg-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12 22a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4"></path><path d="M12 22a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4"></path><path d="M8 10h8"></path><path d="M8 14h8"></path></svg>
             Gemini Ai Proxy
           </a>
-        </div>
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
-          <a href="https://chat.whatsapp.com/Cypxx2dOy22CbCKFkBDgEe" download class="inline-flex items-center justify-center bg-pink-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 transform hover:-translate-y-1 text-lg font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
-            Joined Whatshapp Chanel 
+          <a href="#" class="inline-flex items-center justify-center bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21.17 8H12"></path><path d="M3.95 6.06L8.53 14"></path><path d="M10.87 21.9L15.46 14"></path></svg>
+            Gemini 2.0 Extension
           </a>
-          <a href="All In files.zip" download class="inline-flex items-center justify-center bg-gray-700 text-white px-8 py-4 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1 text-lg font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M8 17s1.5 2 4 2 4-2 4-2"></path><path d="M21 16V9c0-.6-.4-1-1-1h-7l-4-4H3c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h17c.6 0 1-.4 1-1Z"></path></svg>
-            All Files (ZIP)
+          <a href="#" class="inline-flex items-center justify-center bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12 2a4 4 0 0 0-4 4v.13a2 2 0 0 0 1 1.73L12 10l3-2.14a2 2 0 0 0 1-1.73V6a4 4 0 0 0-4-4Z"></path><path d="M4 11a2 2 0 0 0-2 2v4c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Z"></path><path d="M12 17v5"></path><path d="M8 21h8"></path></svg>
+            PC Cool Bot
+          </a>
+          <a href="#" class="inline-flex items-center justify-center bg-red-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-red-700 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M17 12H3"></path><path d="m11 18-6-6 6-6"></path><path d="M21 16V8"></path></svg>
+            Fast Browser
+          </a>
+          <a href="#" class="inline-flex items-center justify-center bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1 text-base font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+            Mobile Browser
           </a>
         </div>
       </div>
@@ -109,7 +121,7 @@
       </div>
     </div>
   </section>
-   ---
+    ---
 
   <section class="py-16 px-6 md:px-12 bg-white">
     <div class="max-w-7xl mx-auto text-center">
@@ -268,6 +280,37 @@
 
   ---
 
+<section id="admin-panel" class="py-16 px-6 md:px-12 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-4xl font-bold text-blue-800 mb-8">Admin Panel: Manage Device Access</h3>
+        <p class="text-gray-600 text-lg mb-8">Input user credentials and device ID to grant or update access.</p>
+
+        <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-200">
+            <h4 class="text-2xl font-semibold text-blue-700 mb-6">Add/Update User Device</h4>
+            <form id="admin-form" class="space-y-6">
+                <div>
+                    <label for="admin-username" class="sr-only">Username</label>
+                    <input type="text" id="admin-username" name="username" placeholder="Username" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                </div>
+                <div>
+                    <label for="admin-password" class="sr-only">Password</label>
+                    <input type="password" id="admin-password" name="password" placeholder="Password" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                </div>
+                <div>
+                    <label for="admin-device-id" class="sr-only">Device ID</label>
+                    <input type="text" id="admin-device-id" name="device_id" placeholder="Device ID" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-green-700 transition duration-300">
+                    Save to Gemini.json
+                </button>
+                <div id="admin-message" class="mt-4 text-center text-sm font-semibold hidden"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+  ---
+
   <section id="contact" class="py-16 px-6 md:px-12 bg-white">
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-4xl font-bold text-blue-800 mb-8">Get In Touch</h3>
@@ -301,6 +344,7 @@
         <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
         <a href="#tutorial" class="hover:text-blue-400 transition duration-300">Tutorial</a>
         <a href="#pricing" class="hover:text-blue-400 transition duration-300">Pricing</a>
+        <a href="#admin-panel" class="hover:text-blue-400 transition duration-300">Admin Panel</a>
         <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact Us</a>
         <a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a>
         <a href="#" class="hover:text-blue-400 transition duration-300">Terms of Service</a>
@@ -314,6 +358,49 @@
     if (window.lucide) {
       lucide.createIcons();
     }
+
+    // JavaScript for handling the admin panel form submission
+    document.getElementById('admin-form').addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        const username = document.getElementById('admin-username').value;
+        const password = document.getElementById('admin-password').value;
+        const device_id = document.getElementById('admin-device-id').value;
+        const adminMessage = document.getElementById('admin-message');
+
+        try {
+            const response = await fetch('/save-gemini-data', { // This endpoint needs to be created on your backend
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password, device_id }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                adminMessage.textContent = 'Data saved successfully!';
+                adminMessage.classList.remove('hidden', 'text-red-600');
+                adminMessage.classList.add('text-green-600');
+                // Optionally clear the form
+                document.getElementById('admin-form').reset();
+            } else {
+                adminMessage.textContent = `Error: ${data.message || 'Something went wrong.'}`;
+                adminMessage.classList.remove('hidden', 'text-green-600');
+                adminMessage.classList.add('text-red-600');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            adminMessage.textContent = 'Network error or server unreachable.';
+            adminMessage.classList.remove('hidden', 'text-green-600');
+            adminMessage.classList.add('text-red-600');
+        } finally {
+            setTimeout(() => {
+                adminMessage.classList.add('hidden');
+            }, 3000); // Hide message after 3 seconds
+        }
+    });
   </script>
 
 </body>
