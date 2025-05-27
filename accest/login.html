@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Google Fonts - Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif; /* Use Inter font */
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Light gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Padding for smaller screens */
+            box-sizing: border-box; /* Include padding in box model */
+            color: #2c3e50;
+        }
+
+        /* Base Container Styling */
+        .login-container, .main-panel-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 550px; /* Slightly wider for more content */
+            text-align: center;
+            border: 1px solid #e0e6ed;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Login Specific Styling */
+        .login-card {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .login-card h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #34495e;
+        }
+
+        /* Main Panel Header */
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e6ed;
+        }
+
+        .panel-header h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .logout-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Tabs Navigation */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e6ed;
+        }
+
+        .tab-button {
+            background-color: transparent;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #718096;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent; /* For active indicator */
+            margin: 0 5px;
+        }
+
+        .tab-button:hover {
+            color: #4a5568;
+            border-bottom-color: #a0aec0;
+        }
+
+        .tab-button.active {
+            color: #4299e1; /* Active tab color */
+            border-bottom-color: #4299e1; /* Active tab underline */
+            font-weight: 700;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none; /* Hidden by default */
+            padding: 20px 0;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .tab-content.active {
+            display: block; /* Shown when active */
+        }
+
+        .tab-content h2, .tab-content h3 {
+            color: #34495e;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1.8em;
+        }
+
+        .tab-content h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+
+        /* Form Group Styling (reused from previous version) */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="datetime-local"]:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+            outline: none;
+        }
+
+        /* Button Styling (reused and adapted) */
+        button[type="submit"] {
+            background: linear-gradient(45deg, #48bb78, #38a169);
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(45deg, #38a169, #2f855a);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+            transform: translateY(-2px);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(56, 161, 105, 0.2);
+        }
+
+        /* Message Styling */
+        .message {
+            margin-top: 25px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
+            opacity: 0;
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.success {
+            background-color: #e6fffa;
+            color: #38a169;
+            border: 1px solid #9ae6b4;
+        }
+
+        .message.error {
+            background-color: #fff5f5;
+            color: #e53e3e;
+            border: 1px solid #feb2b2;
+        }
+
+        /* Separator for Key User section */
+        .separator {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            margin: 40px 0;
+        }
+
+        /* Responsive design for mobile and small screens */
+        @media (max-width: 600px) {
+            .login-container, .main-panel-container {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            .panel-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .panel-header h1 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .logout-button {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+                border-bottom: none;
+            }
+
+            .tab-button {
+                flex: 1 1 45%; /* Allow tabs to wrap */
+                margin: 5px;
+                padding: 10px 15px;
+                font-size: 0.9em;
+                border-bottom: 2px solid transparent;
+            }
+
+            .tab-content h2, .tab-content h3 {
+                font-size: 1.5em;
+            }
+
+            button[type="submit"] {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <div class="login-card">
+            <h2>Developer Panel Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMessage" class="message"></p>
+        </div>
+    </div>
+
+    <div class="main-panel-container" id="mainPanelContainer" style="display:none;">
+        <header class="panel-header">
+            <h1>Developer Panel: User Management</h1>
+            <button id="logoutButton" class="logout-button">Logout</button>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="developer">Developer</button>
+            <button class="tab-button" data-tab="master">Master</button>
+            <button class="tab-button" data-tab="admin">Admin</button>
+            <button class="tab-button" data-tab="seller">Seller</button>
+        </nav>
+
+        <div id="developerTab" class="tab-content active">
+            <h2>Create Developer Account</h2>
+            <form id="createDeveloperForm">
+                <div class="form-group">
+                    <label for="devUsername">Developer Username:</label>
+                    <input type="text" id="devUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="devPassword">Password:</label>
+                    <input type="password" id="devPassword" required>
+                </div>
+                <button type="submit">Create Developer</button>
+            </form>
+            <p id="devMessage" class="message"></p>
+        </div>
+
+        <div id="masterTab" class="tab-content">
+            <h2>Create Master Account</h2>
+            <form id="createMasterForm">
+                <div class="form-group">
+                    <label for="masterUsername">Master Username:</label>
+                    <input type="text" id="masterUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterPassword">Password:</label>
+                    <input type="password" id="masterPassword" required>
+                </div>
+                <button type="submit">Create Master</button>
+            </form>
+            <p id="masterMessage" class="message"></p>
+        </div>
+
+        <div id="adminTab" class="tab-content">
+            <h2>Create Admin Account</h2>
+            <form id="createAdminForm">
+                <div class="form-group">
+                    <label for="adminUsername">Admin Username:</label>
+                    <input type="text" id="adminUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password:</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit">Create Admin</button>
+            </form>
+            <p id="adminMessage" class="message"></p>
+        </div>
+
+        <div id="sellerTab" class="tab-content">
+            <h2>Create Seller Account</h2>
+            <form id="createSellerForm">
+                <div class="form-group">
+                    <label for="sellerUsername">Seller Username:</label>
+                    <input type="text" id="sellerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="sellerPassword">Password:</label>
+                    <input type="password" id="sellerPassword" required>
+                </div>
+                <button type="submit">Create Seller</button>
+            </form>
+            <p id="sellerMessage" class="message"></p>
+
+            <hr class="separator">
+
+            <h3>Create Key User Data (Saved to GitHub)</h3>
+            <form id="userDataForm">
+                <div class="form-group">
+                    <label for="userName">Key User Name:</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="deviceId">Device ID:</label>
+                    <input type="text" id="deviceId" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="datetime-local" id="expiryDate" required>
+                </div>
+                <button type="submit">Save Key User Data</button>
+            </form>
+            <p id="keyUserMessage" class="message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
