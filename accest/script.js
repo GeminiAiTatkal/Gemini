@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Configuration (IMPORTANT: Replace with your actual GitHub details) ---
     // !!! IMPORTANT: NEVER expose your GitHub PAT directly in client-side code in a production environment.
     // This is for demonstration purposes ONLY.
-    const GITHUB_TOKEN = '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'; // Replace with your token
+    const GITHUB_TOKEN = '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'; // Replace with your token
     const REPO_OWNER = 'Gemini'; // Replace with your GitHub username
     const REPO_NAME = 'accest';       // Replace with your repository name
     const FILE_PATH = 'other.json';           // Path to the file for Key User data
